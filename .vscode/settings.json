@@ -1,3 +1,7 @@
 {
-    "eslint.enable": true
+    "eslint.enable": true,
+    "editor.insertSpaces": true,
+    "editor.tabSize": 2,
+    "editor.trimAutoWhitespace": true,
+    "editor.wordWrap": true
 }
