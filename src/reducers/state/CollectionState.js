@@ -10,10 +10,10 @@
  *      - fetched (defaults to false)
  *      - error (defaults to alse)
  */
-import { Map } from 'immutable'
+import { Map, List } from 'immutable'
 
 const CollectionState = Map({
-  collections: Map(),
+  collections: List(),
   activeCollection: undefined,
   fetched: false,
   loading: false,

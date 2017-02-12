@@ -1,0 +1,49 @@
+.CollectionSlider {
+  width: 100%;
+  margin: auto;
+  background: color;
+  max-height: 300px;
+  height: 100%;
+  margin-top: 30px;
+  font-family: 'Merienda', serif;
+}
+
+.slick-slide img {
+  margin: auto;
+  text-align: center;
+  height: 400px;
+  max-height: 400px;
+}
+
+.CollectionSlider-image {
+  margin: auto;
+}
+
+.CollectionSlider-subtitle {
+  position: relative;
+  background-color: black;
+  color: white;
+  top: -100px;
+  width: fit-content;
+  padding: 0px 6px 1px 6px;
+  border-radius: 2px;
+}
+
+.CollectionSlider-textSlide {
+  max-height: 400px;
+  color: white;
+  padding: 2%;
+  border-radius: 5px;
+  background-image: 
+    linear-gradient(
+      rgba(0, 200, 200, 0.5),
+      rgba(0, 0, 0, 0.7)
+    ),
+    url('http://enjoycss.com/webshots/hB_1.png');
+  background-repeat: repeat;
+}
+
+.CollectionSlider-textSlide h2 {  
+  padding: 2%;
+  border-radius: 2px;
+}

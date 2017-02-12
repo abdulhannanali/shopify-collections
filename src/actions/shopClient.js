@@ -19,4 +19,8 @@ const shopClient = ShopifyBuy.buildClient({
   domain: SHOPIFY_DOMAIN
 })
 
+if (process.env.NODE_ENV === 'development') {
+  window.shopClient = shopClient
+}
+
 export default shopClient

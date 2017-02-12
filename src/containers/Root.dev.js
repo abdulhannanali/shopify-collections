@@ -1,14 +1,14 @@
-import React, { Component } from 'react'
-import configureStore from '../store/configureStore'
+import React from 'react'
 import { Provider } from 'react-redux'
 
+import configureStore from '../store'
 import App from './App'
 
 const store = configureStore()
 
 const Root = () => (
   <Provider store={store}>
-    <h1>Hello World</h1>
+    <App />
   </Provider>
 )
 
