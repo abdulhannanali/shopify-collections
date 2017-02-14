@@ -1,4 +1,4 @@
-const { NODE_ENV } = process.env
+const { NODE_ENV = 'development' } = process.env
 
 if (NODE_ENV === 'development') {
   module.exports = require('./configureStore.dev')

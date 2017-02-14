@@ -55,6 +55,7 @@ module.exports = {
     paths.appIndexJs
   ],
   output: {
+    crossOriginLoading: 'anonymous',
     // The build folder.
     path: paths.appBuild,
     // Generated JS file names (with nested folders).
