@@ -11,8 +11,9 @@ export default class Footer extends Component {
         and it's amazing 
         <a href="https://shopify.github.io/js-buy-sdk/">
           <span className="shopify"> Buy SDK</span>
-        </a> 
+        </a>
         </h4>
+        <h4>Licensed under MIT LICENSE. Check out the code at <a href="https://github.com/abdulhannanali/shopify-collections">Github</a></h4>
       </div>
     )
   }
