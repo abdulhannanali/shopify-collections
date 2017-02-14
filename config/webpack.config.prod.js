@@ -1,7 +1,6 @@
 var autoprefixer = require('autoprefixer')
 var webpack = require('webpack')
 var HtmlWebpackPlugin = require('html-webpack-plugin')
-var SriPlugin = require('webpack-subresource-integrity')
 var ExtractTextPlugin = require('extract-text-webpack-plugin')
 var ManifestPlugin = require('webpack-manifest-plugin')
 var InterpolateHtmlPlugin = require('react-dev-utils/InterpolateHtmlPlugin')
@@ -185,9 +184,6 @@ module.exports = {
     // In production, it will be an empty string unless you specify "homepage"
     // in `package.json`, in which case it will be the pathname of that URL.
     new InterpolateHtmlPlugin(env.raw),
-    new SriPlugin({
-      hashFuncNames: ['sha256', 'sha384']
-    }),
     // Generates an `index.html` file with the <script> injected.
     new HtmlWebpackPlugin({
       inject: true,
