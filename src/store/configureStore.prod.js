@@ -1,7 +1,7 @@
 import { createStore, applyMiddleware } from 'redux'
 import rootReducer from '../reducers'
 import thunk from 'redux-thunk'
-import { composeWithDevTools } from 'redux-devtools-extension/logOnlyInProduction'
+import { composeWithDevTools } from 'redux-devtools-extension/logOnly'
 
 export default function () {
   const middlewares = [
