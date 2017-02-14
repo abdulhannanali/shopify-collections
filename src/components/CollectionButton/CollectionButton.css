@@ -1,0 +1,13 @@
+.CollectionButton {
+  margin: 30px;
+  border: 2px black solid;
+  background-color: black;
+  padding: 1%;
+  color: white;
+}
+
+.CollectionButton a {
+  text-decoration: none;
+  color: white;
+  font-family: 'Merienda', serif;
+}

@@ -2,8 +2,11 @@ import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import { bindActionCreators } from 'redux'
 import { fetchCollections, setActiveCollection } from '../actions/collectionActions'
+import { fetchProductsIfRequired } from '../actions/productActions'
 import { List } from 'immutable'
 import Loader from '../components/Loader'
+import { INITIAL_COLLECTION } from '../constants'
+
 
 import CollectionSlider from '../components/CollectionSlider'
 
@@ -14,8 +17,11 @@ class CollectionCarousel extends Component {
     this.beforeSlideChange = this.beforeSlideChange.bind(this)
   }
   
-  componentDidMount () {
+  async componentDidMount () {
+    // A manual Hack in order to fetch the collections
+    this.props.setActiveCollection(INITIAL_COLLECTION)
     this.props.fetchCollections()
+    this.props.fetchProducts(INITIAL_COLLECTION)
   }
 
   /**
@@ -23,9 +29,10 @@ class CollectionCarousel extends Component {
    * persistent change to the id of the slide
    */
   onSlideChange (collectionId) {
-    const { setActiveCollection } = this.props
+    const { setActiveCollection, fetchProducts } = this.props
     if (setActiveCollection) {
       setActiveCollection(collectionId)
+      fetchProducts(collectionId)
     }
   }
 
@@ -39,7 +46,11 @@ class CollectionCarousel extends Component {
    * @param {Number} nextId  `collection_id` of the upcoming collection
    */
   beforeSlideChange (currentId, nextId)  {
-    console.log(currentId, nextId)
+    const { fetchProducts } = this.props
+
+    if (fetchProducts) {
+      fetchProducts(nextId)
+    }
   }
 
   render () {
@@ -58,9 +69,11 @@ class CollectionCarousel extends Component {
         <div className="row">
           <div className="col-sm-12">
             <div className="CollectionCarousel-slider">
-              <CollectionSlider collections={this.props.collections}
-                                onChange={this.onSlideChange}
-                                onBeforeChange={this.beforeSlideChange} />
+              <CollectionSlider 
+                collections={this.props.collections}
+                onChange={this.onSlideChange}
+                onBeforeChange={this.beforeSlideChange}
+              />
             </div>
           </div>
         </div>
@@ -87,7 +100,8 @@ const CarouselContainer = connect(
   function mapDispatchToProps (dispatch) {
     return bindActionCreators({
       fetchCollections,
-      setActiveCollection
+      setActiveCollection,
+      fetchProducts: fetchProductsIfRequired
     }, dispatch)
   }
 )(CollectionCarousel)

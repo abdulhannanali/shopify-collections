@@ -1,6 +1,8 @@
 import React, { Component } from 'react'
 import CollectionCarousel from './CollectionCarousel'
-import Loader from '../components/Loader'
+import CollectionProducts from './CollectionProducts'
+import Footer from '../components/Footer'
+
 import 'animate.css'
 import '../styles/App.css'
 
@@ -18,6 +20,12 @@ export default class App extends Component {
           <div className="CollectionCarousel">
             <CollectionCarousel />
           </div>
+        </div>
+        <div className="container">
+            <CollectionProducts />
+        </div>
+        <div className="footer">
+          <Footer />
         </div>
       </div>
     )

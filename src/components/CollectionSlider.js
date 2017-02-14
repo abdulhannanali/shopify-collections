@@ -1,6 +1,5 @@
 import React, { Component } from 'react'
 import Slider from 'react-slick'
-import classnames from 'classnames'
 import './CollectionSlider.css'
 
 
@@ -36,7 +35,7 @@ export default class CollectionSlider extends Component {
       return collections.map(({ collection_id, image, title, body_html }) => {
         if (image) {
           return (
-            <div className="CollectionSlider-image" key={image.src}>
+            <div className="CollectionSlider-image" key={collection_id}>
               <img className="img-responsive" src={image.src} alt={collection_id} />
               <div className="CollectionSlider-subtitle">
                 <h2>{title}</h2>
@@ -46,7 +45,7 @@ export default class CollectionSlider extends Component {
           )
         } else {
           return (
-            <div className="CollectionSlider-textSlide">
+            <div className="CollectionSlider-textSlide" key={collection_id}>
               <h2>{title}</h2>
               <h3>{body_html}</h3>
             </div>

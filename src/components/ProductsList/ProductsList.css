@@ -1,0 +1,20 @@
+.ProductsList {
+  margin-top: 250px;
+  margin-bottom: 30px;
+}
+
+.ProductsList-loading {
+  margin: auto;
+  margin-top: 400px;
+  margin-bottom: 400px;
+  font-family: 'Playfair Display SC', sans-serif;
+}
+
+.ProductsList-error {
+  margin-top: 400px;
+  margin-bottom: 400px;
+}
+
+.ProductsList-error  {
+  color: red;
+}

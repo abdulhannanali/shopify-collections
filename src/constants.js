@@ -19,3 +19,15 @@ export const COLLECTIONS = [
   408559249,
   408216785
 ]
+export const INITIAL_COLLECTION = 408659857
+
+// Action types for Products Reducer
+export const FETCH_PRODUCTS_STARTED = 'FETCH_PRODUCTS_STARTED'
+export const FETCH_PRODUCTS_FINISHED = 'FETCH_PRODUCTS_FINISHED'
+export const FETCH_PRODUCTS_FAILED = 'FETCH_PRODUCTS_FAILED'
+
+// Change the Product options in case we want to change a Variant using the
+// ProductReducer and SET_VARIANT sets the Variant explicitly, nice option to make some
+// more changes
+export const CHANGE_PRODUCT_OPTIONS = 'CHANGE_PRODUCT_OPTIONS'
+export const SET_VARIANT = 'SET_VARIANT'
