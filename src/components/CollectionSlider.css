@@ -12,6 +12,7 @@
   text-align: center;
   height: 400px;
   max-height: 400px;
+  transform: scaleX(2) scaleY(1.5);
 }
 
 .CollectionSlider-image {
@@ -19,13 +20,22 @@
 }
 
 .CollectionSlider-subtitle {
+  background-image:
+    linear-gradient(
+      rgba(0, 0, 0, 0.6),
+      rgba(0, 0, 0, 0.6)
+    );
+  padding: 5px;
   position: relative;
-  background-color: black;
-  color: white;
-  top: -100px;
+  color: black;
   width: fit-content;
-  padding: 0px 6px 1px 6px;
+  margin: auto;
+  top: -200px;
   border-radius: 2px;
+}
+
+.CollectionSlider-subtitleText {
+  color: white;
 }
 
 .CollectionSlider-textSlide {
@@ -38,8 +48,16 @@
       rgba(0, 200, 200, 0.5),
       rgba(0, 0, 0, 0.7)
     ),
-    url('http://enjoycss.com/webshots/hB_1.png');
+    url('/shopify-collections/tiles.png');
   background-repeat: repeat;
+}
+
+.CollectionSlider-textSlide-text {
+  background-image: linear-gradient(
+    rgba(0, 0, 0, 0.5),
+    rgba(0, 0, 0, 0.5)
+  );
+  padding-bottom: 2px;
 }
 
 .CollectionSlider-textSlide h2 {  

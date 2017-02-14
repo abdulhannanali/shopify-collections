@@ -9,7 +9,7 @@ export default class CollectionSlider extends Component {
     
     // Not changing carousel settings for the purpose
     this.carouselSettings = {
-      dots: true,
+      dots: false,
       speed: 500,
       centerMode: true,
       slidesToShow: 1,
@@ -38,16 +38,20 @@ export default class CollectionSlider extends Component {
             <div className="CollectionSlider-image" key={collection_id}>
               <img className="img-responsive" src={image.src} alt={collection_id} />
               <div className="CollectionSlider-subtitle">
-                <h2>{title}</h2>
-                <h3>{body_html}</h3>
+                <span className="CollectionSlider-subtitleText">
+                  <h2>{title}</h2>
+                  <h3>{body_html}</h3>
+                </span>
               </div>
             </div>
           )
         } else {
           return (
             <div className="CollectionSlider-textSlide" key={collection_id}>
-              <h2>{title}</h2>
-              <h3>{body_html}</h3>
+              <div className="CollectionSlider-textSlide-text">
+                <h2>{title}</h2>
+                <h3>{body_html}</h3>
+              </div>
             </div>
           )
         }
