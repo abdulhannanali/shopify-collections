@@ -1,5 +1,7 @@
 import React, { Component } from 'react'
 import Slider from 'react-slick'
+import { INITIAL_COLLECTION } from '../constants'
+
 import './CollectionSlider.css'
 
 
@@ -20,6 +22,22 @@ export default class CollectionSlider extends Component {
     this.mapImageSlides = this.mapImageSlides.bind(this)
     this.afterChange = this.afterChange.bind(this)
     this.beforeChange = this.beforeChange.bind(this)
+  }
+
+  /**
+   * getInitialSlide
+   * gets the index of the initial slide
+   */
+  getInitialSlide () {
+    if (!this.initialSlide && this.props.collections) {
+      let slideIndex
+      this.props.collections.forEach(({ collection_id }, index) => {
+        if (collection_id === INITIAL_COLLECTION) {
+          slideIndex = index
+        }
+      })
+      this.initialSlide = slideIndex
+    }
   }
 
   /**
@@ -97,11 +115,16 @@ export default class CollectionSlider extends Component {
   }
 
   render () {
+    if (!this.initialSlide) {
+      this.getInitialSlide()
+    }
+    
     return (
       <div className="CollectionSlider">
         <Slider {...this.carouselSettings}
                 afterChange={this.afterChange}
-                beforeChange={this.beforeChange}>
+                beforeChange={this.beforeChange}
+                initialSlide={this.initialSlide}>
           {this.mapImageSlides(this.props.collections)}
         </Slider>
       </div>

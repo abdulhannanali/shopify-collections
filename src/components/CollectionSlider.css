@@ -44,11 +44,11 @@
   padding: 2%;
   border-radius: 5px;
   background-image: 
+    url('/shopify-collections/tile.png'),
     linear-gradient(
       rgba(0, 200, 200, 0.5),
       rgba(0, 0, 0, 0.7)
-    ),
-    url('/shopify-collections/tiles.png');
+    );
   background-repeat: repeat;
 }
 

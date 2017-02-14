@@ -14,12 +14,13 @@ export const SET_ACTIVE_COLLECTION = 'SET_ACTIVE_COLLECTION'
  * that can be only fetched
  */
 export const COLLECTIONS = [
-  408659857,
-  408415121,
-  408559249,
-  408216785
+  410152273,
+  410152593,
+  410149841,
+  410151313,
+  410151697
 ]
-export const INITIAL_COLLECTION = 408659857
+export const INITIAL_COLLECTION = 410152273
 
 // Action types for Products Reducer
 export const FETCH_PRODUCTS_STARTED = 'FETCH_PRODUCTS_STARTED'
