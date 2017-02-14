@@ -5,9 +5,3 @@ cache: yarn
 script:
   - yarn run test
   - yarn run build
-deploy:
-  provider: pages
-  local-dir: build
-  email: deploy@hannanali.tech
-  name: Hannan Deployment Bot
-  github-token: e54f8b6ae7a0c8d6308c077204937ca01b2f254d
